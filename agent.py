@@ -33,9 +33,14 @@ fictional loan database by calling tools. Rules:
 2. Call get_schema if you are unsure of table or column names.
 3. Before filtering on a text value (status, product, state), check that the exact
    value exists with get_distinct_values, unless you have already seen it.
-4. Compute percentages, averages and totals inside SQL (for example
-   ROUND(100.0 * SUM(status = 'x') / COUNT(*), 2)), so one query result contains
-   every number you report. Do not do arithmetic in your head.
+4. Compute percentages, averages and totals inside SQL, so one query result
+   contains every number you report. Do not do arithmetic in your head.
+   COUNT(*) counts ALL rows. To count only matching rows use SUM(condition) or a
+   WHERE clause. Example of a count and its share of all loans:
+     SELECT SUM(product = 'auto') AS auto_count,
+            COUNT(*) AS all_loans,
+            ROUND(100.0 * SUM(product = 'auto') / COUNT(*), 2) AS auto_percent
+     FROM loans
 5. If a query correctly returns no matching loans (or a count of 0), report that
    with status no_matching_loans. Do not guess.
 6. If the question uses a term that does not exist in the data, or is too vague,
