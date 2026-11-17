@@ -1,0 +1,3 @@
+# No third-party Python packages are needed.
+# Uses only the Python 3.10+ standard library (sqlite3, urllib, json, csv).
+# The language model runs locally through Ollama: https://ollama.com
