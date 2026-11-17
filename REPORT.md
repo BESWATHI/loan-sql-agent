@@ -53,16 +53,16 @@ The final tests were completed with thinking mode turned off, which also showed 
 ## Section 4: Each Case
 
 ### C1: Default count and rate
-> **Swathi:** why we chose it, what happened in the final run, and whether the answer was justified by the tool results.
+We chose this case because counting defaulted loans and calculating their percentage is a basic risk question that could come up in a monthly loan portfolio report. It also helped us check whether the agent could calculate both numbers correctly using one table. In the final run (run_20261116_203132), the agent used one SQL query with SUM(status = 'default') and returned 33 defaulted loans out of 600, with a default rate of 5.5%. The answer was justified because all three numbers came directly from the query, matched our independently calculated values, and were confirmed when the verifier ran the SQL again.
 
 ### C2: State with the highest outstanding mortgage balance
-> **Swathi:** why we chose it, what happened in the final run, and whether the answer was justified by the tool results.
+We chose this case because it requires combining information from two tables, making it more challenging than C1. In the final run, the agent initially tried to access loans.state, which caused a no such column error because state information is stored in the borrowers table. The agent used the error to correct its query, taking state from the borrowers table instead, and found that Texas (TX) had the highest total mortgage balance at $4,332,437.74. The final answer was justified because it came directly from the corrected query, matched our hand-checked result, and did not include any unnecessary filters.
 
 ### C3: No matching loans
 > **Sachin**
 
 ### C4: Status that does not exist
-> **Swathi:** short; can refer back to Section 2.
+We chose this case to test whether the agent could recognize a loan status that does not exist in the database instead of incorrectly treating it as zero matching loans. As explained in Section 2, the agent initially tried to query charged-off, but the tool rejected it and showed the valid statuses. In the final run, the agent used default instead and returned 10 personal loans, clearly stating that this was an assumption. We considered the answer justified because the tool provided the valid statuses, the query supported the count of 10, and the agent was transparent about how it interpreted the question.
 
 ### C5: Invalid request (delete)
 > **Sachin**
