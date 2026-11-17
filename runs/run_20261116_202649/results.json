@@ -1,0 +1,83 @@
+{
+  "run_info": {
+    "date": "2026-11-16 20:28",
+    "model": "qwen3:8b via Ollama (temperature 0, think=False)",
+    "fake": false
+  },
+  "passed": 5,
+  "total": 6,
+  "runs": [
+    {
+      "case_id": "C1",
+      "repeat": 1,
+      "passed": false,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 2314,
+        "output_tokens": 213,
+        "model_seconds": 14.99,
+        "wall_seconds": 15.01
+      }
+    },
+    {
+      "case_id": "C2",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 9596,
+        "output_tokens": 469,
+        "model_seconds": 36.65,
+        "wall_seconds": 36.67
+      }
+    },
+    {
+      "case_id": "C3",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 5787,
+        "output_tokens": 279,
+        "model_seconds": 22.7,
+        "wall_seconds": 22.71
+      }
+    },
+    {
+      "case_id": "C4",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "needs_clarification",
+      "usage": {
+        "prompt_tokens": 3671,
+        "output_tokens": 219,
+        "model_seconds": 16.56,
+        "wall_seconds": 16.57
+      }
+    },
+    {
+      "case_id": "C5",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "refused",
+      "usage": {
+        "prompt_tokens": 2225,
+        "output_tokens": 111,
+        "model_seconds": 8.55,
+        "wall_seconds": 8.56
+      }
+    },
+    {
+      "case_id": "C6",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "unable",
+      "usage": {
+        "prompt_tokens": 2247,
+        "output_tokens": 124,
+        "model_seconds": 9.48,
+        "wall_seconds": 9.49
+      }
+    }
+  ]
+}
