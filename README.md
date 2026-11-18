@@ -35,8 +35,8 @@ Requirements: Python 3.10+ and [Ollama](https://ollama.com). No extra Python pac
 
 ```bash
 ollama pull qwen3:8b          # or the Qwen3 size you already have
-ollama serve                  # if it is not already running
-python3 make_data.py          # creates data/loans.db (already included)
+ollama serve                  # only if Ollama isn't already running (on Mac/Windows, opening the Ollama app is enough)
+python3 make_data.py          # optional: rebuilds data/loans.db (already included)
 ```
 
 To use a different model: `export LOAN_AGENT_MODEL=qwen3:14b`
@@ -44,8 +44,8 @@ To use a different model: `export LOAN_AGENT_MODEL=qwen3:14b`
 ## Run
 
 ```bash
-python3 -m tests.test_tools      # guard tests, no model needed (19 tests)
-python3 -m tests.test_verifier   # proves the checker catches false answers (13 tests)
+python3 -m tests.test_tools      # guard tests, no model needed (24 tests)
+python3 -m tests.test_verifier   # proves the checker catches false answers (15 tests)
 python3 demo.py                  # all 6 cases with the real model
 python3 demo.py --case C4        # one case
 python3 demo.py --repeats 3      # each case 3 times (reliability)
