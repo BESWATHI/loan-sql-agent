@@ -44,7 +44,7 @@ To use a different model: `export LOAN_AGENT_MODEL=qwen3:14b`
 ## Run
 
 ```bash
-python3 -m tests.test_tools      # guard tests, no model needed (24 tests)
+python3 -m tests.test_tools      # guard tests, no model needed (26 tests)
 python3 -m tests.test_verifier   # proves the checker catches false answers (15 tests)
 python3 demo.py                  # all 6 cases with the real model
 python3 demo.py --case C4        # one case
