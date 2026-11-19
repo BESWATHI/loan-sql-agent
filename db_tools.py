@@ -211,9 +211,10 @@ def filter_value_warnings(query):
             continue  # LIKE patterns such as 'mort%' are not checked
         values = existing_values(column)
         if value not in values:
-            warnings.append(
-                "The value '%s' does not exist in %s.%s. Existing values are: %s."
-                % (value, CATEGORY_COLUMNS[column], column, ", ".join(values)))
+            message = ("The value '%s' does not exist in %s.%s. Existing values are: %s."
+                       % (value, CATEGORY_COLUMNS[column], column, ", ".join(values)))
+            if message not in warnings:  # the same bad value used twice gives one warning
+                warnings.append(message)
     return warnings
 
 
