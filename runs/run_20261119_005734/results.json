@@ -1,0 +1,23 @@
+{
+  "run_info": {
+    "date": "2026-11-19 00:58",
+    "model": "qwen3:8b via Ollama (temperature 0, think=False)",
+    "fake": false
+  },
+  "passed": 1,
+  "total": 1,
+  "runs": [
+    {
+      "case_id": "C7",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 7968,
+        "output_tokens": 350,
+        "model_seconds": 35.84,
+        "wall_seconds": 35.95
+      }
+    }
+  ]
+}
