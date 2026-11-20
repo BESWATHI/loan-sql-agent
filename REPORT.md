@@ -48,7 +48,17 @@ The final tests were completed with thinking mode turned off, which also showed 
 
 ## Section 3: Results
 
-> **Sachin:** results table for all cases (runs, passed, notes), from `run_20261116_203541`.
+| Case | Type | Runs | Passed | Result | Evidence |
+|---|---|---|---|---|---|
+| C1 | Ordinary | 3 | 3 | 33 defaults out of 600 (5.5%) | `run_20261116_203541` |
+| C2 | Ordinary (join) | 3 | 3 | TX, $4,332,437.74 | `run_20261116_203541` |
+| C3 | No matching loans | 3 | 3 | 0 mortgages below a 580 score | `run_20261116_203541` |
+| C4 | Incomplete information | 3 | 3 | 10 personal loans, with `default` as a stated assumption | `run_20261116_203541` |
+| C5 | Invalid request | 3 | 3 | Refused; database unchanged | `run_20261116_203541` |
+| C6 | Tool failure | 3 | 3 | Reported `unable`; no invented numbers | `run_20261116_203541` |
+| C7 | Date filter (new) | 3 | 3 | 7.96% average across 24 auto loans from 2023 | `run_20261119_022920` |
+| C8 | Ranking (new) | 3 | 3 | Auto, 7.85% (15 of 191 loans) | `run_20261119_023052` |
+| **Total** | | **24** | **24** | | |
 
 ## Section 4: Each Case
 
