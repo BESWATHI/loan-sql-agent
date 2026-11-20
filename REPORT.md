@@ -60,6 +60,8 @@ The final tests were completed with thinking mode turned off, which also showed 
 | C8 | Ranking (new) | 3 | 3 | Auto, 7.85% (15 of 191 loans) | `run_20261119_023052` |
 | **Total** | | **24** | **24** | | |
 
+The six original benchmark cases also passed 6 of 6 when executed locally on my laptop during run run_20261117_192550. Because the model ran at temperature 0, the repeated executions produced identical outputs, demonstrating that the agent behaves consistently rather than proving it can generalize to every possible question.
+
 ## Section 4: Each Case
 
 ### C1: Default count and rate
