@@ -108,7 +108,11 @@ After the fixes, all six test cases passed. We repeated the six cases three time
 
 ## Section 6: How We Checked the Answers
 
-> **Sachin:** explain `verify.py` in plain words: why our checks do not depend on the model's own claims.
+We never accept an answer just because the model claims it is correct. Instead, verify.py checks every answer against evidence the model cannot fake: our hand-checked values computed via plain Python on the underlying CSV files, the actual tool outputs recorded during the run, a fresh re-execution of the agent’s own SQL queries, and a SHA-256 hash of the database file.
+
+First, it checks that the final status is one the specific case accepts, such as refused for C5. It then compares the SHA-256 hash of loans.db before and after execution so that any change to the data is immediately detected. Next, each expected number defined in expected_values.py must appear among the figures the agent reports, and for ranking or identification cases like C2 and C8, the expected named item (such as TX or auto) must appear in the response as a whole word. Conversely, every number the agent reports must also trace back to real tool output—allowing percentages derived as ratios of two tool results, such as 33 / 600 × 100 = 5.5—while flagging any SQL the agent claims to have used without actually executing it. Some cases enforce additional targeted checks: in C3, re-running the SQL must genuinely return 0; in C5, the trace must confirm no write attempts got through; and in C6, the execution log must record a failed database call. Finally, we validated the verifier itself using tests/test_verifier.py, which runs 15 tests—12 deliberately wrong answers it must catch and 3 valid answers it must accept—confirming that the checker neither lets errors slip through nor falsely rejects legitimate outputs.
+
+The verifier allows small rounding differences—for example, accepting 7.96 in C7’s final answer against 7.958 returned from SQL—and ignores numbers copied directly from the question, such as 2023 in C7, which is not a database output. However, it still has three notable limitations: for ranking questions like C8, an incorrect response that lists every product’s rate while naming the wrong product as highest could still pass; the numerical rounding tolerance scales with large values, meaning C2 would accept anything within about $4,300 of the true balance; and the ratio-matching rule could theoretically validate a wrong number by coincidence.
 
 ## Section 7: Limitations and What We Learned
 
