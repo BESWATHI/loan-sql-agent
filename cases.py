@@ -102,7 +102,7 @@ def build_cases():
             "simulate_db_failure": True,
             "hand_checked": {"must_not_report_numbers": True},
         },
-                {
+        {
             "id": "C7",
             "kind": "normal",
             "title": "Ordinary question with a date filter",
