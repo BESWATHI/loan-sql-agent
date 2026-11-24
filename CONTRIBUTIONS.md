@@ -19,16 +19,20 @@
 
 ## Sachin Muttu Baraddi (GitHub: SachinBaraddi)
 
-**Main responsibility:** data and evaluation
+**Main responsibility:** data and evaluation; new test cases and checking the results
 
-- `make_data.py`:
-- `expected_values.py`:
-- `cases.py`:
-- `verify.py`:
-- `demo.py` / run record:
-- `tests/test_verifier.py`:
+- Set up the project on a second laptop using only the README; all tests and the demo passed (6 of 6, `run_20261117_192550`), showing the project runs on another machine
+- Fixed the README: outdated test counts, when `ollama serve` is needed on Mac, `make_data.py` marked optional, and C7/C8 added to the test cases table
+- Added two new test cases: C7 (date filter, average auto loan rate in 2023) and C8 (ranking, product with the highest default rate)
+- Wrote the hand-checked answers for C7 and C8 in `expected_values.py` using plain Python on the CSV files, including a tie check for C8, and added both cases to `cases.py` with "why_chosen" lines and the default-rate definition
+- Ran C7 and C8 three times each (3 of 3 passed for both)
+- Fixed a bug in `db_tools.py` where the same invalid value used twice repeated the warning, and added 2 tests to `tests/test_tools.py` (26 of 26 passed)
+- Code changes (C7/C8 functions, bug fix, new tests) were developed with an AI assistant; I ran them, checked the results against the data, and committed them
+- Read and can explain `make_data.py`, `expected_values.py`, `cases.py` and `verify.py`
+- Wrote REPORT.md Section 3, Section 4 for C3, C5, C6, C7 and C8, and Section 6, including three limitations of the verifier
 
-**Something I can explain in detail:** (e.g. how the verifier re-runs the agent's SQL)
+**Something I can explain in detail:** why C8 checks the default rate 7.85 and not just the name "auto", since auto also has the most defaults, so the name alone wouldn't prove the agent computed a rate.
+
 
 ## Done together
 

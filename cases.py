@@ -18,6 +18,8 @@ def build_cases():
     c2 = expected_values.top_state_mortgage_balance()
     c3 = expected_values.mortgages_below_580()
     c4 = expected_values.personal_loans_in_default()
+    c7 = expected_values.avg_rate_auto_2023()
+    c8 = expected_values.highest_default_rate_product()
 
     return [
         {
@@ -99,5 +101,35 @@ def build_cases():
             "must_mention_any": [],
             "simulate_db_failure": True,
             "hand_checked": {"must_not_report_numbers": True},
+        },
+        {
+            "id": "C7",
+            "kind": "normal",
+            "title": "Ordinary question with a date filter",
+            "question": "What is the average interest rate on auto loans originated in 2023?",
+            "why_chosen": "No earlier case filters by date. Origination dates are stored as text "
+                          "(YYYY-MM-DD), so the agent must select one year correctly, combine it with "
+                          "a product filter, and compute an average. Using the wrong year or product "
+                          "gives a clearly different number.",
+            "accepted_statuses": ["answered"],
+            "expected_numbers": [c7["average_rate"]],
+            "must_mention_any": [],
+            "hand_checked": c7,
+        },
+        {
+            "id": "C8",
+            "kind": "normal",
+            "title": "Ranking question: product with the highest default rate",
+            "question": "Which product has the highest default rate?",
+            "why_chosen": "Checks ranking by a computed rate rather than a raw count. Here 'default "
+                          "rate' means loans with status 'default' divided by all loans of that "
+                          "product; late loans are not counted. The agent must group by product, "
+                          "compute each rate, and pick the highest. We also check the rate itself, "
+                          "because auto has both the most defaults and the highest rate, so naming "
+                          "the product alone would not prove the agent computed a rate.",
+            "accepted_statuses": ["answered"],
+            "expected_numbers": [c8["default_percent"]],
+            "must_mention_any": [c8["product"]],
+            "hand_checked": c8,
         },
     ]
