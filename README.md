@@ -87,18 +87,18 @@ We never accept an answer because the model says it is right. For every run:
 
 ## Files
 
-| File | Purpose | Owner |
+| File | Purpose | Who worked on it |
 |---|---|---|
-| `make_data.py` | Builds the synthetic database (fixed seed) | Sachin |
-| `expected_values.py` | Hand-checked answers in plain Python | Sachin |
-| `cases.py` | Test cases and why each was chosen | Sachin (chosen together) |
-| `verify.py` | Evidence-based checks | Sachin |
-| `demo.py` | Runs cases, writes the run record | Sachin / Swathi |
+| `make_data.py` | Builds the synthetic database (fixed seed) | Swathi (Sachin reviewed) |
+| `expected_values.py` | Hand-checked answers in plain Python | Swathi (C1–C4); Sachin (C7, C8) |
+| `cases.py` | Test cases and why each was chosen | Swathi (C1–C6); Sachin (C7, C8) |
+| `verify.py` | Evidence-based checks | Swathi (Sachin reviewed and documented its limitations) |
+| `demo.py` | Runs cases, writes the run record | Swathi |
 | `agent.py` | Agent loop | Swathi |
 | `tools.py` | Tool descriptions and dispatch | Swathi |
-| `db_tools.py` | Tools and read-only guard | Swathi |
+| `db_tools.py` | Tools and read-only guard | Swathi; Sachin fixed the duplicate-warning bug |
 | `model_client.py` | Ollama connection | Swathi |
-| `tests/` | Guard tests, verifier tests, scripted fake model | Both |
+| `tests/` | Guard tests, verifier tests, scripted fake model | Swathi; Sachin added 2 guard tests |
 
 ## Data
 
