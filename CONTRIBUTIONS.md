@@ -33,16 +33,6 @@
 
 **Something I can explain in detail:** why C8 checks the default rate 7.85 and not just the name "auto", since auto also has the most defaults, so the name alone wouldn't prove the agent computed a rate.
 
-**Main responsibility:** data and evaluation
-
-- `make_data.py`:
-- `expected_values.py`:
-- `cases.py`:
-- `verify.py`:
-- `demo.py` / run record:
-- `tests/test_verifier.py`:
-
-**Something I can explain in detail:** (e.g. how the verifier re-runs the agent's SQL)
 
 ## Done together
 
