@@ -12,6 +12,8 @@
 - Found and analyzed failures in real runs: the C1 evidence problem, C2 passing partly by luck, the C4 failures, and the C1 regression
 - Tested the C4 fixes step by step (warning, thinking mode, tool refusal) and re-ran all cases after each change
 - Ran the reliability check (18 of 18 passed)
+- Reviewed and merged Sachin's pull request (#1), then ran the final 8-case run on the merged code (8 of 8 passed, `run_20261124_104839`)
+- Wrote the problem statement; prepared the workflow diagram, slides and project PDF with an AI assistant
 - Set up Git and the GitHub repository
 - Wrote REPORT.md Sections 1, 2, 5, 7 and Section 4 for C1, C2, and C4
 
@@ -36,7 +38,7 @@
 
 ## Done together
 
-- Choosing the six test cases and why
-- Running the demo and reviewing the run records
-- Writing REPORT.md
-- Reviewing each other's code
+- Reviewing each other's work through pull requests: Swathi reviewed and merged Sachin's pull request (#1); Sachin reviewed and merged Swathi's pull request (swathi-docs)
+- Checking that the project runs on both laptops (6 of 6 on each), and the final 8-case run on the merged code (8 of 8)
+- REPORT.md: each member wrote the sections listed above
+- Preparing and presenting the demo together
