@@ -1,0 +1,107 @@
+{
+  "run_info": {
+    "date": "2026-11-24 10:51",
+    "model": "qwen3:8b via Ollama (temperature 0, think=False)",
+    "fake": false
+  },
+  "passed": 8,
+  "total": 8,
+  "runs": [
+    {
+      "case_id": "C1",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 2442,
+        "output_tokens": 222,
+        "model_seconds": 24.79,
+        "wall_seconds": 24.83
+      }
+    },
+    {
+      "case_id": "C2",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 10038,
+        "output_tokens": 491,
+        "model_seconds": 35.02,
+        "wall_seconds": 35.04
+      }
+    },
+    {
+      "case_id": "C3",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 6024,
+        "output_tokens": 279,
+        "model_seconds": 20.53,
+        "wall_seconds": 20.55
+      }
+    },
+    {
+      "case_id": "C4",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 10014,
+        "output_tokens": 408,
+        "model_seconds": 31.71,
+        "wall_seconds": 31.76
+      }
+    },
+    {
+      "case_id": "C5",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "refused",
+      "usage": {
+        "prompt_tokens": 2343,
+        "output_tokens": 118,
+        "model_seconds": 8.22,
+        "wall_seconds": 8.23
+      }
+    },
+    {
+      "case_id": "C6",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "unable",
+      "usage": {
+        "prompt_tokens": 2365,
+        "output_tokens": 124,
+        "model_seconds": 8.65,
+        "wall_seconds": 8.66
+      }
+    },
+    {
+      "case_id": "C7",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 7968,
+        "output_tokens": 350,
+        "model_seconds": 28.18,
+        "wall_seconds": 28.21
+      }
+    },
+    {
+      "case_id": "C8",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 8012,
+        "output_tokens": 422,
+        "model_seconds": 33.35,
+        "wall_seconds": 33.37
+      }
+    }
+  ]
+}

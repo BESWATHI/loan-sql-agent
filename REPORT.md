@@ -4,11 +4,12 @@
 **Team:** Swathi Baba Eswarappa, Sachin Muttu Baraddi
 **Model:** qwen3:8b via Ollama (local), temperature 0, thinking off
 **Main evidence:**
-- `runs/run_20261116_203132/RUN_RECORD.md`: final full run, 6 of 6 passed
-- `runs/run_20261116_203541/RUN_RECORD.md`: reliability check, 18 of 18 passed
+- `runs/run_20261124_104839/RUN_RECORD.md`: final full run on the merged code, all 8 cases, 8 of 8 passed
+- `runs/run_20261116_203132/RUN_RECORD.md`: final run of the original 6 cases, 6 of 6 passed
+- `runs/run_20261116_203541/RUN_RECORD.md`: reliability check for C1 to C6, 18 of 18 passed
 
 **Repository:** https://github.com/BESWATHI/loan-sql-agent
-**Commit:** (add the final commit hash before submitting: `git log -1 --format=%h`)
+**Commit:** final version on the `main` branch (see the GitHub commit history)
 
 ## Section 1: What the Agent Does
 
@@ -59,6 +60,8 @@ The final tests were completed with thinking mode turned off, which also showed 
 | C7 | Date filter (new) | 3 | 3 | 7.96% average across 24 auto loans from 2023 | `run_20261119_022920` |
 | C8 | Ranking (new) | 3 | 3 | Auto, 7.85% (15 of 191 loans) | `run_20261119_023052` |
 | **Total** | | **24** | **24** | | |
+
+Final full run on the merged code (all 8 cases, after the duplicate-warning fix): 8 of 8 passed (`run_20261124_104839`).
 
 The six original benchmark cases also passed 6 of 6 when executed locally on my laptop during run run_20261117_192550. Because the model ran at temperature 0, the repeated executions produced identical outputs, demonstrating that the agent behaves consistently rather than proving it can generalize to every possible question.
 
