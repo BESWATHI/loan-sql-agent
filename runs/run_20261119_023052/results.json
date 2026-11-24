@@ -1,0 +1,47 @@
+{
+  "run_info": {
+    "date": "2026-11-19 02:32",
+    "model": "qwen3:8b via Ollama (temperature 0, think=False)",
+    "fake": false
+  },
+  "passed": 3,
+  "total": 3,
+  "runs": [
+    {
+      "case_id": "C8",
+      "repeat": 1,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 8012,
+        "output_tokens": 422,
+        "model_seconds": 32.87,
+        "wall_seconds": 32.92
+      }
+    },
+    {
+      "case_id": "C8",
+      "repeat": 2,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 8012,
+        "output_tokens": 422,
+        "model_seconds": 32.99,
+        "wall_seconds": 33.04
+      }
+    },
+    {
+      "case_id": "C8",
+      "repeat": 3,
+      "passed": true,
+      "final_status": "answered",
+      "usage": {
+        "prompt_tokens": 8012,
+        "output_tokens": 422,
+        "model_seconds": 34.2,
+        "wall_seconds": 34.24
+      }
+    }
+  ]
+}

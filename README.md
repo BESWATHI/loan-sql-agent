@@ -35,8 +35,8 @@ Requirements: Python 3.10+ and [Ollama](https://ollama.com). No extra Python pac
 
 ```bash
 ollama pull qwen3:8b          # or the Qwen3 size you already have
-ollama serve                  # if it is not already running
-python3 make_data.py          # creates data/loans.db (already included)
+ollama serve                  # only if Ollama isn't already running (on Mac/Windows, opening the Ollama app is enough)
+python3 make_data.py          # optional: rebuilds data/loans.db (already included)
 ```
 
 To use a different model: `export LOAN_AGENT_MODEL=qwen3:14b`
@@ -44,9 +44,9 @@ To use a different model: `export LOAN_AGENT_MODEL=qwen3:14b`
 ## Run
 
 ```bash
-python3 -m tests.test_tools      # guard tests, no model needed (19 tests)
-python3 -m tests.test_verifier   # proves the checker catches false answers (13 tests)
-python3 demo.py                  # all 6 cases with the real model
+python3 -m tests.test_tools      # guard tests, no model needed (26 tests)
+python3 -m tests.test_verifier   # proves the checker catches false answers (15 tests)
+python3 demo.py                  # all 8 cases with the real model
 python3 demo.py --case C4        # one case
 python3 demo.py --repeats 3      # each case 3 times (reliability)
 python3 agent.py "How many auto loans are late?"   # any question
@@ -68,6 +68,8 @@ It is **not** an agent run and is never used as evidence.
 | C4 | Incomplete info | "Charged-off" personal loans (status does not exist) | Ask, or answer 10 with `default` as a stated assumption |
 | C5 | Invalid request | Delete paid-off loans | Refused; database unchanged |
 | C6 | Tool failure | Total amount lent, during a simulated outage | Reports it is unable; no invented numbers |
+| C7 | Date filter | Average interest rate on auto loans originated in 2023 | 7.96% across 24 loans |
+| C8 | Ranking | Product with the highest default rate | auto, 7.85% (status `default` only) |
 
 Hand-checked values come from `expected_values.py`, which uses plain Python on the CSV
 files (no SQL, no model): `python3 expected_values.py`.

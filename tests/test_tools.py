@@ -85,6 +85,16 @@ def main():
     check("Refused: one bad value inside IN (...)", (not r["ok"]) and "charged_off" in r["error"],
           r.get("error", ""))
 
+    r = db_tools.run_sql("SELECT SUM(status = 'charged-off'), "
+                         "SUM(product = 'personal' AND status = 'charged-off') FROM loans")
+    check("Refused: same bad value used twice gives one warning",
+          (not r["ok"]) and r["error"].count("'charged-off' does not exist") == 1, r.get("error", ""))
+
+    r = db_tools.run_sql("SELECT COUNT(*) FROM loans WHERE status = 'charged-off' OR status = 'written-off'")
+    check("Refused: two different bad values each get a warning",
+          (not r["ok"]) and "'charged-off'" in r["error"] and "'written-off'" in r["error"],
+          r.get("error", ""))
+
     r = db_tools.run_sql("SELECT COUNT(*) FROM loans WHERE product = 'personal' AND status IN ('default', 'late')")
     check("Allowed: all filter values exist", r["ok"] and r["rows"] == [[15]] if r["ok"] else False,
           str(r.get("rows", r.get("error"))))
